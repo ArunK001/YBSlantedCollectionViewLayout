@@ -3,6 +3,7 @@ osx_image: xcode8.2
 language: objective-c
 
 script: ./test.sh
+  - xcodebuild -workspace YBSlantedCollectionViewLayout.xcworkspace -scheme YBSlantedCollectionViewLayout -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7' -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES build test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
